@@ -11,3 +11,4 @@ let xepLoai =
         ? "Trung Bình"
         : "Yếu";
 console.log(`Xếp loại : ${xepLoai}`);
+``;
