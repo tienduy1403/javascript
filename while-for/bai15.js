@@ -1,3 +1,6 @@
+/*
+Bài 15: Dùng hàm function để viết công thức tính n! nhập vào từ bàn phím người dùng.
+*/
 
 function tinhGiaiThua(n) {
     let giaiThua = 1;
@@ -7,4 +10,4 @@ function tinhGiaiThua(n) {
     return giaiThua;
 }
 let n = parseInt(prompt('Nhap vao so n'));
-console.log(`${n}! = ${tinhGiaiThua(n)}`);
+alert(`${n}! = ${tinhGiaiThua(n)}`);
