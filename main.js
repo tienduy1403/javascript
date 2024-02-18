@@ -112,31 +112,50 @@ const a = "qwertyuiopasdfghjklzxcvbnm"
 const b = "asdfghjklzxcvbnmqwertyuiop"
 */
 
-function encryptMessage(message) {
-    const a = "qwertyuiopasdfghjklzxcvbnm";
-    const b = "asdfghjklzxcvbnmqwertyuiop";
-    let result = "";
+// function encryptMessage(message) {
+//     const a = "qwertyuiopasdfghjklzxcvbnm";
+//     const b = "asdfghjklzxcvbnmqwertyuiop";
+//     let result = "";
 
-    for (let i = 0; i < message.length; i++) {
-        let char = message[i];
-        // Kiem tra ki tu nhap vao co trong bang ma hay khong
-        if (a.includes(char)) {
-            // Chuyen doi
-            // Kiểm tra vị trí index của chuỗi nhập vào trong a
-            let index = a.indexOf(char);
-            // Lấy giá trị index dóng sang b
-            result += b[index];
-        } else {
-            result += char;
-        }
+//     for (let i = 0; i < message.length; i++) {
+//         let char = message[i];
+//         // Kiem tra ki tu nhap vao co trong bang ma hay khong
+//         if (a.includes(char)) {
+//             // Chuyen doi
+//             // Kiểm tra vị trí index của chuỗi nhập vào trong a
+//             let index = a.indexOf(char);
+//             // Lấy giá trị index dóng sang b
+//             result += b[index];
+//         } else {
+//             result += char;
+//         }
+//     }
+
+//     return result;
+// }
+
+// // Nhập liệu
+
+// let inputMesage = prompt("Mời nhập tin nhắn ");
+// let kq = encryptMessage(inputMesage);
+// alert(`Tin nhắn của bạn đã được mã hóa
+//     ${kq}`);
+
+/*
+Bài 20: Đếm từ tôi trong chuỗi
+    const a = "tôi chăm học tôi chịu khó tôi đẹp trai"
+    Đếm số lần từ tôi xuất hiện trong chuỗi trên
+*/
+
+const a = "tôi chăm học tôi chịu khó tôi đẹp trai";
+
+let targetWord = "tôi";
+let count = 0;
+
+for (let i = 0; i < a.length; i++) {
+    if (a.slice(i, i + targetWord.length) === targetWord) {
+        count++;
     }
-
-    return result;
 }
 
-// Nhập liệu
-
-let inputMesage = prompt("Mời nhập tin nhắn ");
-let kq = encryptMessage(inputMesage);
-alert(`Tin nhắn của bạn đã được mã hóa
-    ${kq}`);
+alert(` Số từ ${targetWord} trong chuỗi là : ${count}`);
