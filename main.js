@@ -147,15 +147,81 @@ Bài 20: Đếm từ tôi trong chuỗi
     Đếm số lần từ tôi xuất hiện trong chuỗi trên
 */
 
-const a = "tôi chăm học tôi chịu khó tôi đẹp trai";
+// const a = "tôi chăm học tôi chịu khó tôi đẹp trai";
 
-let targetWord = "tôi";
-let count = 0;
+// let targetWord = "tôi";
+// let count = 0;
 
-for (let i = 0; i < a.length; i++) {
-    if (a.slice(i, i + targetWord.length) === targetWord) {
-        count++;
-    }
-}
+// for (let i = 0; i < a.length; i++) {
+//     if (a.slice(i, i + targetWord.length) === targetWord) {
+//         count++;
+//     }
+// }
 
-alert(` Số từ ${targetWord} trong chuỗi là : ${count}`);
+// alert(` Số từ ${targetWord} trong chuỗi là : ${count}`);
+
+/*
+Bài 21: Viết chương trình tách số và chuỗi thành 2 chuỗi:
+    ví dụ nhập vào abc123 sẽ tách thành 2 chuỗi "abc" và "123"
+*/
+
+// function separate(inputString) {
+//     let letters = "";
+//     let numbers = "";
+
+//     for (let i = 0; i < inputString.length; i++) {
+//         let char = inputString[i];
+//         if (isNaN(char)) {
+//             letters += char;
+//         } else {
+//             numbers += char;
+//         }
+//     }
+//     alert(` Ban da nhap vao ${string}
+// Gom chuoi ki tu : ${letters}
+// Va chuoi number: ${numbers}`);
+//     return inputString;
+// }
+
+// let string = prompt(`Moi ban nhap vao mot tin nhan`);
+// separate(string);
+
+// console.log(separate(string));
+
+/*
+Bài 22: Viết chương trình nhập vào năm sinh in ra số tuổi
+*/
+
+// let yearOfBirth = prompt("Nhập năm sinh của bạn:");
+// yearOld(yearOfBirth);
+
+// function yearOld(yearOfBirth) {
+//     let age = 0;
+//     let date = new Date();
+//     let currentTimes = date.getTime();
+//     let inputYear = new Date(yearOfBirth, 0, 1).getTime();
+//     console.log(inputYear);
+//     age = parseInt((currentTimes - inputYear) * 3.2 * Math.pow(10, -11));
+//     alert(`Bạn ${age} tuổi`);
+//     return age;
+// }
+
+// function checkAge() {
+//     let yearOfBirth = prompt("Nhập năm sinh của bạn:");
+//     if (
+//         isNaN(yearOfBirth) ||
+//         yearOfBirth < 0 ||
+//         Number.isInteger(yearOfBirth)
+//     ) {
+//         alert(`Năm sinh không hợp lệ. Mời nhập lại`);
+//         checkAge();
+//     } else {
+//         yearOld(yearOfBirth);
+//     }
+// }
+
+// checkAge();
+
+/*
+Bài 23: Viết chường trình đếm ngược thời gian làm bài theo giây
+*/
