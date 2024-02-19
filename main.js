@@ -226,12 +226,66 @@ Bài 22: Viết chương trình nhập vào năm sinh in ra số tuổi
 Bài 23: Viết chường trình đếm ngược thời gian làm bài theo giây
 */
 
-let inputTimes = prompt("Nhap thoi gian lam bai");
-timeTest(inputTimes);
-console.log(`Thoi gian lam bai ${minutes} phut`);
+function countdownTimer(minutes) {
+    let seconds = minutes * 60;
 
-let timeTest = function (minutes) {
-    minutes--;
-    console.log(`Thoi gian lam bai con: ${minutes}`);
+    console.log(`Thoi gian lam bai ${minutes}'(${seconds}s)`);
+
+    const intervalId = setInterval(function () {
+        const displayMinutes = Math.floor(seconds / 60);
+        const displaySeconds = seconds % 60;
+
+        console.log(`Thoi gian con lai ${displayMinutes}:${displaySeconds}s`);
+
+        if (seconds > 0) {
+            seconds--;
+        } else {
+            console.log("Het thoi gian lam bai");
+            clearInterval(intervalId);
+        }
+    }, 1000);
+}
+
+let userInput = function () {
+    let inputMinutes = prompt("Nhap vap so phut lam bai tap");
+    let minutes = parseInt(inputMinutes);
+    if (!isNaN(minutes) && minutes > 0) {
+        countdownTimer(minutes);
+    } else {
+        userInput();
+    }
 };
-setInterval();
+
+userInput();
+
+// function countdownTimer(minutes) {
+//     let seconds = minutes * 60;
+
+//     console.log(`Thời gian làm bài: ${minutes} phút (${seconds} giây)`);
+
+//     const intervalId = setInterval(() => {
+//         const displayMinutes = Math.floor(seconds / 60);
+//         const displaySeconds = seconds % 60;
+
+//         console.log(
+//             `Thời gian còn lại: ${displayMinutes} phút ${displaySeconds} giây`
+//         );
+
+//         if (seconds > 0) {
+//             seconds--;
+//         } else {
+//             console.log("Hết thời gian làm bài!");
+//             clearInterval(intervalId);
+//         }
+//     }, 1000);
+// }
+
+// // Sử dụng hàm và nhập số phút
+// const userInput = prompt("Nhập số phút cần đếm ngược:");
+// const minutes = parseInt(userInput, 10);
+
+// if (!isNaN(minutes) && minutes > 0) {
+//     countdownTimer(minutes);
+// } else {
+//     console.log("Vui lòng nhập một số phút hợp lệ và lớn hơn 0.");
+// }
