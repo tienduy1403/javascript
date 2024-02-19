@@ -225,3 +225,13 @@ Bài 22: Viết chương trình nhập vào năm sinh in ra số tuổi
 /*
 Bài 23: Viết chường trình đếm ngược thời gian làm bài theo giây
 */
+
+let inputTimes = prompt("Nhap thoi gian lam bai");
+timeTest(inputTimes);
+console.log(`Thoi gian lam bai ${minutes} phut`);
+
+let timeTest = function (minutes) {
+    minutes--;
+    console.log(`Thoi gian lam bai con: ${minutes}`);
+};
+setInterval();
